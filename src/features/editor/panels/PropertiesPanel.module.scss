@@ -1,0 +1,65 @@
+@use '@/styles/mixins' as m;
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.rangeRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.range {
+  flex: 1;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+.value {
+  min-width: 48px;
+  text-align: right;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text-dim);
+}
+
+.toggles {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.timestamps {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.timestamp {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  padding: 8px 11px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+
+  dt {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-dim);
+  }
+
+  dd {
+    margin: 0;
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    @include m.truncate;
+  }
+}

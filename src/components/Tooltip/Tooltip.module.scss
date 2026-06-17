@@ -1,0 +1,19 @@
+.trigger {
+  display: inline-flex;
+}
+
+.tip {
+  position: fixed;
+  transform: translate(-50%, -100%) translateY(-8px);
+  background: var(--bg-elevated);
+  color: var(--text);
+  border: 1px solid var(--border-strong);
+  box-shadow: var(--shadow);
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+  font-size: 0.78rem;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 1100;
+  animation: fade-in var(--transition) both;
+}

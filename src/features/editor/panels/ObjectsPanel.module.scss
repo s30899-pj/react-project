@@ -1,0 +1,93 @@
+@use '@/styles/mixins' as m;
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background: var(--bg-elevated);
+  color: var(--text-dim);
+  font-size: 0.78rem;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all var(--transition);
+
+  &:hover {
+    background: var(--bg-hover);
+    color: var(--text);
+  }
+
+  &.active {
+    border-color: var(--accent);
+    background: var(--accent-soft);
+    color: var(--accent);
+  }
+}
+
+.center {
+  @include m.flex-center;
+  padding: 24px 0;
+}
+
+.error {
+  font-size: 0.82rem;
+  color: var(--danger);
+  line-height: 1.4;
+}
+
+.empty {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(72px, 1fr));
+  gap: 6px;
+}
+
+.asset {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  padding: 8px 4px;
+  border-radius: var(--radius-sm);
+  border: 2px solid transparent;
+  background: var(--bg-elevated);
+  color: var(--text-dim);
+  cursor: pointer;
+  transition: all var(--transition);
+
+  &:hover {
+    background: var(--bg-hover);
+    transform: translateY(-2px);
+  }
+
+  &.active {
+    border-color: var(--accent);
+    color: var(--accent);
+    box-shadow: 0 0 0 2px var(--accent-soft);
+  }
+}
+
+.assetIcon {
+  font-size: 1.7rem;
+  line-height: 1;
+}
+
+.assetName {
+  @include m.truncate;
+  max-width: 100%;
+  font-size: 0.68rem;
+  text-align: center;
+}

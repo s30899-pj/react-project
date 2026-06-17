@@ -1,0 +1,52 @@
+@use '@/styles/mixins' as m;
+
+.screen {
+  @include m.flex-center;
+  min-height: 100vh;
+  width: 100%;
+  padding: 24px;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 480px;
+  gap: 16px;
+}
+
+.emoji {
+  font-size: 5rem;
+  line-height: 1;
+  filter: drop-shadow(var(--shadow));
+
+  @include m.respond-to(sm) {
+    font-size: 3.5rem;
+  }
+}
+
+.heading {
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text);
+
+  @include m.respond-to(sm) {
+    font-size: 1.4rem;
+  }
+}
+
+.subtext {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-dim);
+}
+
+.link {
+  margin-top: 8px;
+  text-decoration: none;
+}

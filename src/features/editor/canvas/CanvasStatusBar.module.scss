@@ -1,0 +1,30 @@
+.bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: var(--bg-panel);
+  border-top: 1px solid var(--border);
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  flex-shrink: 0;
+}
+
+.item {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.sep {
+  color: var(--text-muted);
+}
+
+.spacer {
+  flex: 1;
+}
+
+.coords {
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+}

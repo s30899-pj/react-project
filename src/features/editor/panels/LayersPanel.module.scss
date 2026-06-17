@@ -1,0 +1,152 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.addRow {
+  display: flex;
+  gap: 6px;
+
+  select {
+    flex: 1;
+    background: var(--bg-input);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    color: var(--text);
+    padding: 7px 8px;
+    font-size: 0.82rem;
+  }
+}
+
+.addBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 7px 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--accent);
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.82rem;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  background: var(--bg-elevated);
+  cursor: pointer;
+  transition:
+    background var(--transition),
+    border-color var(--transition);
+
+  &:hover {
+    background: var(--bg-hover);
+  }
+}
+
+.active {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.iconBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  font-size: 0.9rem;
+  padding: 2px;
+  line-height: 1;
+}
+
+.typeIcon {
+  font-size: 0.95rem;
+}
+
+.name {
+  flex: 1;
+  font-size: 0.85rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.rename {
+  flex: 1;
+  background: var(--bg-input);
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  color: var(--text);
+  font-size: 0.85rem;
+  padding: 2px 6px;
+}
+
+.count {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  background: var(--bg-input);
+  border-radius: 999px;
+  padding: 1px 7px;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+.opacity {
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.actions {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+
+  button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    min-width: 38px;
+    padding: 7px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+    background: var(--bg-elevated);
+    font-size: 0.95rem;
+    transition: background var(--transition);
+
+    &:hover {
+      background: var(--bg-hover);
+    }
+  }
+}
+
+.danger:hover {
+  background: rgba(231, 76, 60, 0.18) !important;
+}

@@ -1,0 +1,19 @@
+.wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.spinner {
+  display: inline-block;
+  border-radius: 50%;
+  border-style: solid;
+  border-color: var(--accent-soft);
+  border-top-color: var(--accent);
+  animation: spin 0.7s linear infinite;
+}
+
+.label {
+  color: var(--text-dim);
+  font-size: 0.85rem;
+}

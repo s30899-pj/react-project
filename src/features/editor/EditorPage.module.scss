@@ -1,0 +1,111 @@
+@use '@/styles/mixins' as m;
+
+.workspace {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  background: var(--bg);
+}
+
+.body {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+
+  @include m.respond-to(sm) {
+    flex-direction: column;
+    overflow-y: auto;
+  }
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 232px;
+  padding: 12px;
+  overflow-y: auto;
+  border-right: 1px solid var(--border);
+  background: var(--bg);
+
+  @include m.respond-to(md) {
+    width: 188px;
+  }
+  @include m.respond-to(sm) {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+}
+
+.stage {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+
+  @include m.respond-to(sm) {
+    min-height: 60vh;
+  }
+}
+
+.minimap {
+  position: absolute;
+  bottom: 44px;
+  right: 14px;
+  z-index: 20;
+
+  @include m.respond-to(sm) {
+    display: none;
+  }
+}
+
+.right {
+  width: 312px;
+  border-left: 1px solid var(--border);
+  background: var(--bg-panel);
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+
+  @include m.respond-to(md) {
+    width: 264px;
+  }
+  @include m.respond-to(sm) {
+    width: 100%;
+    border-left: none;
+    border-top: 1px solid var(--border);
+  }
+}
+
+.tabs {
+  flex: 1;
+  min-height: 0;
+}
+
+.tabBody {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 12px;
+}
+
+.panelFallback {
+  @include m.flex-center;
+  padding: 30px;
+}
+
+.center {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  text-align: center;
+  color: var(--text);
+}

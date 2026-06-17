@@ -1,0 +1,49 @@
+.tile {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.liquid {
+  background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 25%, transparent 25%);
+  background-size: 8px 8px;
+  animation: pulse-soft 3s ease-in-out infinite;
+}
+
+.height {
+  font-size: 0.55rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.8);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.6);
+}
+
+.object {
+  line-height: 1;
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.35));
+}
+
+.collision {
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(231, 76, 60, 0.45),
+    rgba(231, 76, 60, 0.45) 4px,
+    rgba(231, 76, 60, 0.2) 4px,
+    rgba(231, 76, 60, 0.2) 8px
+  );
+}
+
+.region {
+  border-radius: 3px;
+}
+
+.regionIcon {
+  line-height: 1;
+}
+
+.effect {
+  mix-blend-mode: screen;
+  opacity: 0.7;
+}

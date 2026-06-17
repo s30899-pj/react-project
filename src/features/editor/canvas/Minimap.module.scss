@@ -1,0 +1,30 @@
+@use '@/styles/mixins' as m;
+
+.minimap {
+  @include m.card;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: var(--bg-panel);
+}
+
+.surface {
+  position: relative;
+  background: var(--canvas-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  cursor: pointer;
+
+  span {
+    position: absolute;
+  }
+}
+
+.caption {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  text-align: center;
+  font-family: var(--font-mono);
+}

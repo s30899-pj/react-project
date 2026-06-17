@@ -1,0 +1,131 @@
+@use '@/styles/mixins' as m;
+
+.quickAccess {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.stats {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.statRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 6px 10px;
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 0.84rem;
+}
+
+.statLabel {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-dim);
+  @include m.truncate;
+}
+
+.statIcon {
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
+.statValue {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+}
+
+.triggerForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.empty {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-align: center;
+  padding: 10px 0;
+}
+
+.triggerList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.triggerItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 7px 10px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  transition: border-color var(--transition);
+
+  &:hover {
+    border-color: var(--border-strong);
+  }
+}
+
+.triggerInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.triggerName {
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--text);
+  @include m.truncate;
+}
+
+.triggerType {
+  font-size: 0.74rem;
+  color: var(--text-muted);
+}
+
+.remove {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+  line-height: 1;
+  padding: 4px 6px;
+  border-radius: var(--radius-sm);
+  opacity: 0.7;
+  transition:
+    opacity var(--transition),
+    background var(--transition);
+
+  &:hover {
+    opacity: 1;
+    background: var(--bg-hover);
+  }
+
+  &:focus-visible {
+    @include m.focus-ring;
+  }
+}

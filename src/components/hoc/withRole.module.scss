@@ -1,0 +1,9 @@
+.denied {
+  padding: 14px;
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius);
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  text-align: center;
+  background: var(--bg-input);
+}

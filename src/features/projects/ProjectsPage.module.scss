@@ -1,0 +1,146 @@
+@use '@/styles/mixins' as m;
+
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.title {
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.subtitle {
+  margin: 0.35rem 0 0;
+  color: var(--text-dim);
+  font-size: 0.9rem;
+}
+
+.newLink {
+  text-decoration: none;
+}
+
+.grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.25rem;
+
+  @include m.respond-to(sm) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  @include m.card;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem;
+  transition: var(--transition);
+
+  &:hover {
+    transform: translateY(-4px);
+    border-color: var(--border-strong);
+    box-shadow: var(--shadow-lg);
+  }
+}
+
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.cardName {
+  @include m.truncate;
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.meta {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.metaRow {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+}
+
+.metaLabel {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+.metaValue {
+  @include m.truncate;
+  margin: 0;
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  text-align: right;
+}
+
+.cardActions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.openLink {
+  flex: 1;
+  text-decoration: none;
+}
+
+.empty {
+  @include m.card;
+  @include m.flex-center;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 3.5rem 1.5rem;
+  text-align: center;
+}
+
+.emptyIcon {
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.emptyTitle {
+  margin: 0.5rem 0 0;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.emptyText {
+  margin: 0 0 0.75rem;
+  max-width: 32ch;
+  color: var(--text-dim);
+  font-size: 0.9rem;
+}

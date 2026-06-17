@@ -1,0 +1,166 @@
+@use '@/styles/mixins' as m;
+
+.page {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 24px 20px 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.head {
+  h1 {
+    margin: 0;
+    font-size: 1.6rem;
+    color: var(--text);
+  }
+
+  p {
+    margin: 6px 0 0;
+    color: var(--text-dim);
+    font-size: 0.9rem;
+  }
+}
+
+.templates {
+  @include m.card;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+
+  h2 {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--text);
+  }
+}
+
+.errorNote {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--danger);
+}
+
+.templateGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 12px;
+}
+
+.templateCard {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 14px;
+  text-align: left;
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  cursor: pointer;
+  transition:
+    border-color var(--transition),
+    background var(--transition),
+    transform var(--transition);
+
+  &:hover {
+    border-color: var(--border-strong);
+    background: var(--bg-hover);
+    transform: translateY(-2px);
+  }
+
+  @include m.focus-ring;
+}
+
+.selected {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+
+  &:hover {
+    border-color: var(--accent);
+  }
+}
+
+.preview {
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.templateName {
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+
+.templateDesc {
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  @include m.truncate;
+}
+
+.dims {
+  margin-top: 2px;
+  font-size: 0.74rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+
+.form {
+  @include m.card;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+
+  @include m.respond-to(md) {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.range {
+  width: 100%;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+.toggles {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 14px;
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  border-top: 1px solid var(--border);
+  padding-top: 16px;
+
+  @include m.respond-to(sm) {
+    flex-direction: column-reverse;
+  }
+}

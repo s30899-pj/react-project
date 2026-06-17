@@ -1,0 +1,131 @@
+.row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.value {
+  min-width: 22px;
+  text-align: center;
+  font-weight: 700;
+  font-family: var(--font-mono);
+}
+
+.shapes {
+  display: flex;
+  gap: 6px;
+  margin-top: 10px;
+
+  button {
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 7px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+    background: var(--bg-elevated);
+    color: var(--text-dim);
+    font-size: 0.8rem;
+    transition: all var(--transition);
+
+    &:hover {
+      background: var(--bg-hover);
+    }
+  }
+}
+
+.swatches {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+}
+
+.swatch {
+  aspect-ratio: 1;
+  border-radius: var(--radius-sm);
+  border: 2px solid transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  transition: transform var(--transition);
+
+  &:hover {
+    transform: scale(1.06);
+  }
+}
+
+.active {
+  border-color: var(--accent) !important;
+  color: var(--accent);
+  box-shadow: 0 0 0 2px var(--accent-soft);
+}
+
+.heightLabel {
+  display: block;
+  margin-top: 12px;
+  font-size: 0.8rem;
+  color: var(--text-dim);
+
+  input {
+    margin-top: 8px;
+  }
+}
+
+.regions {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  .region {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 10px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+    background: var(--bg-elevated);
+    color: var(--text);
+    font-size: 0.83rem;
+    text-align: left;
+    transition: background var(--transition);
+
+    &:hover {
+      background: var(--bg-hover);
+    }
+  }
+}
+
+.objectPreview {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.objectIcon {
+  font-size: 2rem;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-input);
+  border-radius: var(--radius-sm);
+}
+
+.color {
+  width: 100%;
+  height: 42px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg-input);
+  cursor: pointer;
+}
+
+.hint {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}

@@ -1,0 +1,39 @@
+@use '@/styles/mixins' as m;
+
+.palette {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+  padding: 8px;
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.tool {
+  @include m.flex-center;
+  width: 100%;
+  aspect-ratio: 1;
+  font-size: 1.2rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  background: var(--bg-elevated);
+  color: var(--text-dim);
+  transition:
+    background var(--transition),
+    border-color var(--transition),
+    color var(--transition),
+    transform var(--transition);
+
+  &:hover {
+    background: var(--bg-hover);
+    color: var(--text);
+    transform: translateY(-1px);
+  }
+}
+
+.active {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  color: var(--accent);
+}

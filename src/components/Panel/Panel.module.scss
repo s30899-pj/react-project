@@ -1,0 +1,77 @@
+@use '@/styles/mixins' as m;
+
+.panel {
+  @include m.card;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 6px 4px 12px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-elevated);
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  color: var(--text);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  padding: 6px 0;
+
+  &:disabled {
+    cursor: default;
+  }
+}
+
+.icon {
+  font-size: 0.95rem;
+}
+
+.chevron {
+  transition: transform var(--transition);
+  display: inline-block;
+  color: var(--text-muted);
+}
+.up {
+  transform: rotate(90deg);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.body {
+  padding: 12px;
+  overflow-y: auto;
+  animation: fade-in var(--transition) both;
+}
+
+.section {
+  & + & {
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid var(--border);
+  }
+}
+
+.sectionLabel {
+  display: block;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}

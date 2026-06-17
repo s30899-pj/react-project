@@ -1,0 +1,64 @@
+@use 'sass:map';
+@use 'tokens' as t;
+
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == sm {
+    @media (max-width: t.$bp-sm) {
+      @content;
+    }
+  } @else if $breakpoint == md {
+    @media (max-width: t.$bp-md) {
+      @content;
+    }
+  } @else if $breakpoint == lg {
+    @media (max-width: t.$bp-lg) {
+      @content;
+    }
+  }
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin card {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+}
+
+@mixin focus-ring {
+  outline: none;
+  &:focus-visible {
+    box-shadow: 0 0 0 2px var(--bg-panel), 0 0 0 4px var(--accent);
+  }
+}
+
+@mixin thin-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-strong) transparent;
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: var(--border-strong);
+    border-radius: 4px;
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+}
+
+@mixin truncate {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@function space($key) {
+  @return map.get(t.$space, $key);
+}

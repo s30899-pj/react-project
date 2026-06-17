@@ -1,0 +1,30 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 40px;
+  text-align: center;
+  color: var(--text);
+}
+
+.icon {
+  font-size: 2.5rem;
+}
+
+.message {
+  color: var(--text-dim);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  max-width: 480px;
+}
+
+.button {
+  background: var(--accent);
+  color: var(--accent-contrast);
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 9px 18px;
+  font-weight: 600;
+}

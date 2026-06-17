@@ -1,0 +1,68 @@
+@use '@/styles/mixins' as m;
+
+.page {
+  @include m.flex-center;
+  min-height: 100vh;
+  padding: 24px;
+  background: var(--bg);
+}
+
+.card {
+  @include m.card;
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 32px;
+  background: var(--bg-panel);
+  box-shadow: var(--shadow-lg);
+
+  @include m.respond-to(sm) {
+    padding: 24px;
+  }
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 4px;
+}
+
+.logo {
+  font-size: 2.2rem;
+  line-height: 1;
+}
+
+.title {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.subtitle {
+  margin: 2px 0 0;
+  font-size: 0.85rem;
+  color: var(--text-dim);
+}
+
+.footer {
+  margin: 0;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text-dim);
+
+  a {
+    color: var(--accent);
+    font-weight: 600;
+    text-decoration: none;
+    transition: color var(--transition);
+
+    &:hover {
+      color: var(--accent-hover);
+      text-decoration: underline;
+    }
+  }
+}

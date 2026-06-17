@@ -1,0 +1,18 @@
+.viewport {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle at 50% 40%, var(--accent-soft), transparent 60%),
+    var(--canvas-bg);
+  touch-action: none;
+  perspective: 1200px;
+}
+
+.stage {
+  transform-origin: center center;
+  transform-style: preserve-3d;
+}

@@ -1,0 +1,84 @@
+@use '@/styles/mixins' as m;
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 8px 14px;
+  background: var(--bg-panel);
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+
+  @include m.respond-to(md) {
+    gap: 8px;
+    overflow-x: auto;
+  }
+}
+
+.group {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  button {
+    @include m.flex-center;
+    min-width: 32px;
+    height: 32px;
+    padding: 0 7px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+    background: var(--bg-elevated);
+    font-size: 0.95rem;
+    transition: background var(--transition);
+
+    &:hover:not(:disabled) {
+      background: var(--bg-hover);
+    }
+
+    &:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+  }
+}
+
+.on {
+  background: var(--accent-soft) !important;
+  border-color: var(--accent) !important;
+}
+
+.mapName {
+  font-weight: 700;
+  font-size: 0.95rem;
+  @include m.truncate;
+  max-width: 200px;
+}
+
+.dirty {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--warning);
+}
+
+.zoom {
+  min-width: 46px;
+  text-align: center;
+  font-size: 0.8rem;
+  font-family: var(--font-mono);
+  color: var(--text-dim);
+}
+
+.spacer {
+  flex: 1;
+}
+
+.saved {
+  font-size: 0.74rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+
+  @include m.respond-to(md) {
+    display: none;
+  }
+}

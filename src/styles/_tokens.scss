@@ -1,0 +1,83 @@
+// Skala punktów przełamania (breakpoints) używana w mixinie respond-to
+$bp-sm: 640px;
+$bp-md: 900px;
+$bp-lg: 1200px;
+
+// Skala odstępów
+$space: (
+  0: 0,
+  1: 4px,
+  2: 8px,
+  3: 12px,
+  4: 16px,
+  5: 24px,
+  6: 32px,
+  7: 48px,
+);
+
+:root {
+  --bg: #15161f;
+  --bg-panel: #1d1f2b;
+  --bg-elevated: #262a38;
+  --bg-input: #20222e;
+  --bg-hover: #2c3040;
+  --border: #313445;
+  --border-strong: #3d4156;
+
+  --text: #e7e9f0;
+  --text-dim: #9aa0b4;
+  --text-muted: #6b7186;
+
+  --accent: #6c5ce7;
+  --accent-hover: #7d6ff0;
+  --accent-contrast: #ffffff;
+  --accent-soft: rgba(108, 92, 231, 0.16);
+
+  --success: #2ecc71;
+  --warning: #f1c40f;
+  --danger: #e74c3c;
+  --info: #3a8ee6;
+
+  --grid-line: rgba(255, 255, 255, 0.06);
+  --canvas-bg: #11121a;
+
+  --radius-sm: 6px;
+  --radius: 10px;
+  --radius-lg: 16px;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 18px 50px rgba(0, 0, 0, 0.45);
+
+  --transition: 160ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 280ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  --font: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', ui-monospace, monospace;
+}
+
+[data-theme='light'] {
+  --bg: #f4f6fb;
+  --bg-panel: #ffffff;
+  --bg-elevated: #ffffff;
+  --bg-input: #eef1f7;
+  --bg-hover: #eceef4;
+  --border: #e1e5ef;
+  --border-strong: #cdd3e1;
+
+  --text: #1f2330;
+  --text-dim: #5a6173;
+  --text-muted: #8a90a2;
+
+  --accent: #6c5ce7;
+  --accent-hover: #5a4bd6;
+  --accent-contrast: #ffffff;
+  --accent-soft: rgba(108, 92, 231, 0.12);
+
+  --grid-line: rgba(20, 22, 35, 0.08);
+  --canvas-bg: #e9ecf4;
+
+  --shadow-sm: 0 1px 2px rgba(20, 25, 45, 0.08);
+  --shadow: 0 8px 24px rgba(20, 25, 45, 0.1);
+  --shadow-lg: 0 18px 50px rgba(20, 25, 45, 0.15);
+}
