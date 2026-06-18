@@ -21,7 +21,7 @@ export function ValidationPanel() {
     stats.totalCells > 0 ? Math.round((stats.paintedCells / stats.totalCells) * 100) : 0
 
   return (
-    <Panel title="Testowanie i walidacja" icon={<FlaskIcon size={16} />} collapsible>
+    <Panel title="Testowanie i walidacja" icon={<FlaskIcon size={16} />}>
           <Panel.Section label="Statystyki">
             <div className={styles.statsGrid}>
               <div className={styles.stat}>

@@ -26,7 +26,6 @@ const AdminPanel = withRole(function AdminPanelInner() {
   const users = listKnownUsers()
   const projects = listProjects()
   const admins = users.filter((u) => u.role === 'admin').length
-  const totalLayers = projects.reduce((sum, project) => sum + project.layerCount, 0)
 
   return (
     <div className={styles.adminStats}>
@@ -37,10 +36,6 @@ const AdminPanel = withRole(function AdminPanelInner() {
       <div className={styles.stat}>
         <span className={styles.statValue}>{projects.length}</span>
         <span className={styles.statLabel}>Projekty w systemie</span>
-      </div>
-      <div className={styles.stat}>
-        <span className={styles.statValue}>{totalLayers}</span>
-        <span className={styles.statLabel}>Warstwy łącznie</span>
       </div>
       <div className={styles.stat}>
         <span className={styles.statValue}>{admins}</span>

@@ -7,18 +7,17 @@ import styles from './ToolPalette.module.scss'
 interface ToolDef {
   id: ToolId
   label: string
-  shortcut: string
 }
 
 export const TOOLS: ToolDef[] = [
-  { id: 'brush', label: 'Pędzel', shortcut: 'B' },
-  { id: 'erase', label: 'Gumka', shortcut: 'E' },
-  { id: 'line', label: 'Linia', shortcut: 'L' },
-  { id: 'rect', label: 'Prostokąt', shortcut: 'R' },
-  { id: 'circle', label: 'Koło', shortcut: 'C' },
-  { id: 'fill', label: 'Wypełnianie', shortcut: 'G' },
-  { id: 'clone', label: 'Klonowanie', shortcut: 'K' },
-  { id: 'pan', label: 'Przesuwanie (rączka)', shortcut: 'H' },
+  { id: 'brush', label: 'Pędzel' },
+  { id: 'erase', label: 'Gumka' },
+  { id: 'line', label: 'Linia' },
+  { id: 'rect', label: 'Prostokąt' },
+  { id: 'circle', label: 'Koło' },
+  { id: 'fill', label: 'Wypełnianie' },
+  { id: 'clone', label: 'Klonowanie' },
+  { id: 'pan', label: 'Przesuwanie (rączka)' },
 ]
 
 export function ToolPalette() {
@@ -27,7 +26,7 @@ export function ToolPalette() {
   return (
     <div className={styles.palette} role="toolbar" aria-label="Narzędzia">
       {TOOLS.map((t) => (
-        <Tooltip key={t.id} label={`${t.label} (${t.shortcut})`}>
+        <Tooltip key={t.id} label={t.label}>
           <button
             className={`${styles.tool} ${state.tool === t.id ? styles.active : ''}`}
             onClick={() => dispatch({ type: 'SET_TOOL', tool: t.id })}

@@ -97,7 +97,7 @@ export function ExportImportPanel() {
   }
 
   return (
-    <Panel title="Eksport / Import / Wersje" icon={<SaveIcon size={16} />} collapsible>
+    <Panel title="Eksport / Import / Wersje" icon={<SaveIcon size={16} />}>
       <Panel.Section label="Eksport">
         <Field label="Format" htmlFor="export-format">
           <select

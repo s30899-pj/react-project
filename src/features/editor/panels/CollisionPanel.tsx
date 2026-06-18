@@ -83,7 +83,7 @@ export function CollisionPanel() {
   }
 
   return (
-    <Panel title="Kolizje i logika mapy" icon={<CollisionIcon size={16} />} collapsible>
+    <Panel title="Kolizje i logika mapy" icon={<CollisionIcon size={16} />}>
       <Panel.Section label="Szybki dostęp">
         <div className={styles.quickAccess}>
           <Button

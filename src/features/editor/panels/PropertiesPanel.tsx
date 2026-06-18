@@ -19,7 +19,7 @@ export function PropertiesPanel() {
   const map = state.project.map
 
   return (
-    <Panel title="Właściwości mapy" icon={<SettingsIcon size={16} />} collapsible>
+    <Panel title="Właściwości mapy" icon={<SettingsIcon size={16} />}>
       <Panel.Section label="Podstawowe">
         <Field label="Nazwa mapy" htmlFor="map-name">
           <input

@@ -6,7 +6,6 @@ import { useEditor } from '@/hooks/useEditor'
 import { useAuth } from '@/hooks/useAuth'
 import { useToast } from '@/hooks/useToast'
 import { useAutoSave } from '@/hooks/useAutoSave'
-import { useKeyboardShortcuts, type ShortcutMap } from '@/hooks/useKeyboardShortcuts'
 import { createSnapshot, loadProject, saveProject } from '@/api/projectStore'
 import { Spinner } from '@/components/Spinner/Spinner'
 import { Button } from '@/components/Button/Button'
@@ -115,7 +114,6 @@ function EditorWorkspace() {
         onToggleFullscreen={toggleFullscreen}
         lastSaved={lastSaved}
       />
-      <EditorShortcuts onSave={save} />
 
       <div className={styles.body}>
         <aside className={styles.left}>
@@ -181,29 +179,6 @@ function EditorWorkspace() {
       </div>
     </div>
   )
-}
-
-function EditorShortcuts({ onSave }: { onSave: () => void }) {
-  const { dispatch } = useEditor()
-  const shortcuts = useMemo<ShortcutMap>(
-    () => ({
-      b: () => dispatch({ type: 'SET_TOOL', tool: 'brush' }),
-      e: () => dispatch({ type: 'SET_TOOL', tool: 'erase' }),
-      l: () => dispatch({ type: 'SET_TOOL', tool: 'line' }),
-      r: () => dispatch({ type: 'SET_TOOL', tool: 'rect' }),
-      c: () => dispatch({ type: 'SET_TOOL', tool: 'circle' }),
-      g: () => dispatch({ type: 'SET_TOOL', tool: 'fill' }),
-      k: () => dispatch({ type: 'SET_TOOL', tool: 'clone' }),
-      h: () => dispatch({ type: 'SET_TOOL', tool: 'pan' }),
-      'mod+z': () => dispatch({ type: 'UNDO' }),
-      'mod+y': () => dispatch({ type: 'REDO' }),
-      'mod+shift+z': () => dispatch({ type: 'REDO' }),
-      'mod+s': () => onSave(),
-    }),
-    [dispatch, onSave],
-  )
-  useKeyboardShortcuts(shortcuts)
-  return null
 }
 
 export default function EditorPage() {
